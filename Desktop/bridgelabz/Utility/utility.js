@@ -87,6 +87,11 @@ return h;
 //PRIMEFACTORS
 
 isPrime(num){
+    if(num<2){
+        
+    return true;
+    }
+
     for(var i=2;i<=num/2;i++){
         if(num%i==0)
         return false;
@@ -389,18 +394,7 @@ primeanapalin(){
 },
 //BUBBLE SORT FOR NUMBERS
 bubblesort(arr){
-    var len=arr.length;
-    for(var i=0;i<arr.length;i++){
-        for(var j=0;j<len-1;j++){
-            if(arr[j]>arr[j+1]){
-                var temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    len--;
-    }
-    return arr;
+    
 },
 
 
@@ -411,7 +405,7 @@ bubblesortstring(arr){
     var len=arr.length;
     for(var i=0;i<arr.length;i++){
         for(var j=0;j<len-1;j++){
-            if(arr[j].localeCompare(arr[j+1])==1){
+            if(arr[j]>arr[j+1]){
                 var temp=arr[j];
                 arr[j]=arr[j+1];
                 arr[j+1]=temp;
@@ -451,16 +445,16 @@ insertionsortstring(arr){
     for(var i=1;i<arr.length;i++){
         for(var j=i-1;j>=0;j--){
             var k=j-1;
-          if((j==0&&(arr[j].localeCompare(arr[i])==1))||
-           k>=0&&((arr[k].localeCompare(arr[i])==-1||0)&&(arr[j].localeCompare(arr[i])==1||0)))
-            {
+            if((j==0&&arr[j]>arr[i])||
+               k>=0&&((arr[k]<=arr[i])&&(arr[j]>=arr[i])))
+               {
                     k=i;
                     var temp=arr[k];
                     while(k>j){
                     arr[k]=arr[--k];
                     }
                     arr[j]=temp;
-            }
+               }
         }
     
     }
@@ -507,13 +501,13 @@ binarysearchstring(arr){
     while(first<=last){
  
         var mid=Math.floor((first+last)/2);
-        if(arr[mid].localeCompare(X)===0){
+        if(arr[mid]===X){
             return mid;
         }
-        else if(arr[mid].localeCompare(X)===1){
+        else if(arr[mid]>X){
             last=mid-1;
         }
-        else if(arr[mid].localeCompare(X)===-1){
+        else if(arr[mid]<X){
             first=mid+1;
         }
        
@@ -736,12 +730,12 @@ merge(arr, l, m, r)
     k = l; // Initial index of merged subarray 
     while (i < n1 && j < n2) 
     { 
-        if (L[i].localeCompare(R[j])==-1) 
+        if (L[i]<=R[j]) 
         { 
             arr[k].push(L[i]); 
             i++; 
         } 
-        else if (L[i].localeCompare(R[j])==0) {
+        else if (L[i]===R[j]) {
             arr[k].push(L[i]); 
             i++; 
         }

@@ -1,3 +1,4 @@
+
 var utility=require('../Utility/utility');
 
 var arrnum=[5,4,3,2,1]//utility.readarray();
