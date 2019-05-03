@@ -1,10 +1,9 @@
 {
   "name": "functional",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha || true"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +12,13 @@
     "js-generics": "0.0.6",
     "mocha": "^6.1.4",
     "readline-sync": "^1.4.9"
-  }
+  },
+  "devDependencies": {
+    "jest": "^24.7.1"
+  },
+  "keywords": [],
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }

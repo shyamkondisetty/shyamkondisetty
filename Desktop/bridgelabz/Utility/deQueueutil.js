@@ -41,4 +41,11 @@ module.exports=function Dequeue(){
    this.size=function(){
        return storage.length;
    }
+   this.printQueue=function(){
+    var totalQueue="";
+    for(var i=0;i<storage.length;i++){
+        totalQueue=totalQueue+storage[i]+" ";
+    }
+    return totalQueue;
+}
 }

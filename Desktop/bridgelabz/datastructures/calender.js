@@ -31,6 +31,10 @@ for(var i=0;i<5;i++){
     array.push(weekArray);
  
 }
+
+/**
+ * 
+ */
 function printCalender(){
     console.log("sun mon tue wed thu fri sat");
     for(let i=0;i<5;i++){

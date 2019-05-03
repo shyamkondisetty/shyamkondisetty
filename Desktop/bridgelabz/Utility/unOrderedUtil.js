@@ -45,25 +45,26 @@ module.exports=function unOrderedList(){
 
     this.remove=function(data){
         currentNode=head;
-        var prev=currentNode
-        while(currentNode===null){
+        var prev=null;
+        while(currentNode!==null){
             if(head===null){
                 console.log("list is empty");
                 break;
             }
-            else if(head.next===null){
-                head=currentNode.next;
-                length--;
+            else if(head.data===data){
+                head=head.next;
+                length--
                 break;
             }
             else if(currentNode.data===data){
                 length--;
                 prev.next=currentNode.next;
-                currentNode=null;
                 break;
             }
             else{
+                prev=currentNode;
                 currentNode=currentNode.next;
+
             }
         }
 
@@ -80,13 +81,13 @@ module.exports=function unOrderedList(){
 
             if(head===null){
                 console.log("list is empty");
-              //break;
+                return false;
             }
             else 
             while(currentNode!==null){
                 if(currentNode.data===data){
                     console.log("the element is found at index "+countNode);
-                    break;
+                    return true;
                 }
                 else{
                 countNode++;
@@ -96,6 +97,7 @@ module.exports=function unOrderedList(){
 
         if(currentNode===null){
             console.log("element is not found");
+            return false;
         }
     }
     this.isEmpty=function(){
@@ -134,20 +136,22 @@ module.exports=function unOrderedList(){
         if(head===null){
             return -1;
         }
+        else{
+            while(currentNode!==null){
+                if(currentNode.data===data){
+                    return countNode;
+                }
+                else{
+                    currentNode=currentNode.next;
+                    countNode++;
+                }
 
-        while(currentNode!==null){
-            if(currentNode.data===data){
-                return countNode;
             }
-            else{
-                currentNode=currentNode.next;
-                countNode++;
-            }
-
-        }
         if(currentNode===null){
-           return -1;
+            return -1;
         }
+        }
+       
     }
     this.insert=function(position,data){
         let node=new Node(data);
@@ -210,10 +214,10 @@ module.exports=function unOrderedList(){
                 prev=currentNode;
                 currentNode=currentNode.next;
             }
-            prev.next=null;
-            currentNode=null;
+            prev.next=currentNode.next;
+            //currentNode=null;
             length--;
-            return prev.data;
+            return currentNode.data;
         }
     }
     this.popAtPosition=function(position){
@@ -225,15 +229,15 @@ module.exports=function unOrderedList(){
         else if(position==0){
             head=currentNode.next;
             length--;
-            currentNode=null;
+            return currentNode.data;
         }
         else{
             while(currentNode!==null){
                 if(countNode==position){
                     prev.next=currentNode.next;
-                    //currentNode=null;
                     length--;
-                    break;
+                    return currentNode.data;
+
                 }
                 else{
                     prev=currentNode;
@@ -243,6 +247,7 @@ module.exports=function unOrderedList(){
             }
             if(currentNode==null){
                 console.log("position is not found");
+                
             }
         }
     }

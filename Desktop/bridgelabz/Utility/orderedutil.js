@@ -128,85 +128,85 @@ module.exports=function orderedList(){
         return length;
     }
     this.index=function(data){
-        countNode=0;
+        let countNode=0;
         currentNode=head;
-        if(head==null){
-            console.log("list is empty");
+        if(head===null){
             return -1;
         }
         else{
             while(currentNode!==null){
-                if(currentNode.data==data){
-                  return countNode;
+                if(currentNode.data===data){
+                    return countNode;
                 }
                 else{
-                    countNode++
                     currentNode=currentNode.next;
+                    countNode++;
                 }
+
             }
-            if(currentNode!==null){
-                return -1;
-            }
+        if(currentNode===null){
+            return -1;
         }
+        }
+       
     }
     this.pop=function(){
+        prev=null;
         currentNode=head;
-        if(head==null){
-            console.log("list is empty");
+        if(currentNode==null){
+            console.log("the list is empty");
         }
-        else if(head.next==null){
-            head=null;
+        else if(currentNode.next==null){
+            let dataRequire=currentNode.data;
+            currentNode==null;
+            prev==currentNode;//head==null;
+            head=prev;
             length--;
-            return currentNode.data;
+            return dataRequire;
         }
         else{
             while(currentNode.next!==null){
                 prev=currentNode;
                 currentNode=currentNode.next;
             }
-            if(currentNode.next==null){
-                prev.next=currentNode.next;
-                length--;
-                return currentNode.data;
-            }
+            prev.next=currentNode.next;
+            //currentNode=null;
+            length--;
+            return currentNode.data;
         }
     }
     this.popAtPosition=function(position){
-        countNode=0;
-        prev=null;
         currentNode=head;
-        if(head==null){
-            return -1;
+        countNode=0;
+        if(length==0&&position==0){
+            console.log("list is empty");
         }
-        else if(countNode==0&&position==0){
+        else if(position==0){
             head=currentNode.next;
             length--;
             return currentNode.data;
         }
-        else if(head.next==null&&position==0){
-            head=null;
-            length--;
-            return head.data;
-        }
-        else {
+        else{
             while(currentNode!==null){
                 if(countNode==position){
                     prev.next=currentNode.next;
                     length--;
                     return currentNode.data;
+
                 }
                 else{
                     prev=currentNode;
                     currentNode=currentNode.next;
                     countNode++;
-                    //console.log(countNode);
                 }
             }
             if(currentNode==null){
-                return -1;
+                console.log("position is not found");
+                
             }
         }
     }
+
     this.printList=function(){
         var list="";
         currentNode=head;

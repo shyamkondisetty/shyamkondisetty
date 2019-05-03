@@ -46,7 +46,11 @@ module.exports=function myStack(){
         return storage.length;
     }
     this.printStack=function(){
-        console.log(storage);
+        let result="";
+        for(i=0;i<storage.length;i++){
+            result=result+storage[i]+" ";
+        }
+        return result
     }
 
 

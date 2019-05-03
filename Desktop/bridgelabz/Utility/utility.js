@@ -7,10 +7,10 @@ module.exports={
 
 /*string repalce*/
 
-replacestring(){
-var str1=readln.question("enter the sentence : ");
-var str2=readln.question("enter the word to replace : ");
-var str3=readln.question("enter the word to be replace with : ");
+replacestring(str2,str3){
+var str1="hello username how are you";
+//var str2=readln.question("enter the word to replace in above sentence: ");
+//var str3=readln.question("enter the word to be replace with : ");
 
 var str4=str1.replace(str2,str3);
 
@@ -38,8 +38,8 @@ console.log(tperc,hperc)
 
 
 /*LEAPYEAR*/
-leap(){
-    var year=readln.question("enter the year that to check leapyear or not : ");
+leap(year){
+    //var year=readln.question("enter the year that to check leapyear or not : ");
     year=parseInt(year);
     var leapYear;
     if(year%4==0){
@@ -73,8 +73,7 @@ for(var i=0;i<=n;i++){
 
 //HARMONIC
 
-harmonic(){
-var n=readln.question("enter the nth harmonic number needed : ");
+harmonic(n){
 n=parseInt(n);
 var h=0;
 for(var i=1;i<=n;i++){
