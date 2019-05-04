@@ -27,7 +27,7 @@ try{
     /**
     * returns total object in the form of JSONstring
     */
-    let JSONstring=JSON.stringify(totalObject);
+    let JSONstring=JSON.stringify(totalObject,null,2);
     console.log(JSONstring);
    /**
     * writing the json string into new outputfile

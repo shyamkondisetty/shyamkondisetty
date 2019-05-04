@@ -1,0 +1,20 @@
+{
+    "stocks":[
+        {
+        "stockname":"HDFC BANK",
+        "numberofstocks":1000,
+        "stockprice":100
+        },
+
+        {
+        "stockname":"ICIC BANK",
+        "numberofstocks":900,
+        "stockprice":90
+        },
+        {
+        "stockname":"Goldmansachs BANK",
+        "numberofstocks":1500,
+        "stockprice":200
+        }
+    ]
+}

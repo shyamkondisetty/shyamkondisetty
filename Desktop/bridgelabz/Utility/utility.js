@@ -198,7 +198,7 @@ read2darray(){
 return arr;
 },
 
-displayarray(arr){
+displayCards(arr){
     for(var i=0;i<arr.length;i++){
         var str="";
         for(var j=0;j<arr[0].length;j++){
@@ -393,7 +393,18 @@ primeanapalin(){
 },
 //BUBBLE SORT FOR NUMBERS
 bubblesort(arr){
-    
+    var len=arr.length;
+    for(var i=0;i<arr.length;i++){
+        for(var j=0;j<len-1;j++){
+            if(arr[j]>arr[j+1]){
+                var temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    len--;
+    }
+    return arr;  
 },
 
 
