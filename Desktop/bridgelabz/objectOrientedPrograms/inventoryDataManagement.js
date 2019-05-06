@@ -10,18 +10,24 @@
  ***************************************************************************************************/
 
 try{
-    let inventoryUtility=require('./utility/inventoryDataManagementutil');
+    /***
+     * @description : it uses to create the objrct of util class containing logic of program
+     */
+    let inventoryutility=require('./utility/inventoryDataManagementutil');
+    let inventoryUtility=new inventoryutility();
     var readline = require('readline-sync');//read-line module for inputs
     console.log("INVENTORY MANAGEMENT");
         /**
-         * allowing user to enter the choice
+         * @description : allowing user to enter the choice
          */
     console.log("eneter the choice return the data");
     console.log("1 Rice ||2 Pulses||3 Wheats");
     var choice = readline.question("");
     choice = parseInt(choice);
         /**
-         * returns particular object details
+         * @param {*}  choice
+         * @description : returns particular object details
+         * @returns : returns the stirng form of data
          */
     console.log(inventoryUtility.inventory(choice));
 }

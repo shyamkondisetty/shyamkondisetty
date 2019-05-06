@@ -11,9 +11,19 @@
  ***************************************************************************************************/
 
 try{
+    /***
+     * @description : To read the file from onother directory we must import filesystem
+     */
     let fs=require('fs');
-    let inventoryUtility=require('./utility/inventoryDataManagementutil');
+    /**
+     * @description : this is to create an object of utility calss 
+     */
+    let inventoryutility=require('./utility/inventoryDataManagementutil');
+    let inventoryUtility=new inventoryutility();
     let totalObject=" { "
+    /***
+     * @description : this is to print the details of all inventories
+     */
     for(i=1;i<=3;i++){
         if(i!=1){
             totalObject=totalObject+" , ";
@@ -24,13 +34,16 @@ try{
 
     totalObject=totalObject+" } "
 
-    /**
-    * returns total object in the form of JSONstring
+    //totalObject=JSON.parse(totalObject);
+
+   /***
+    * @description : returns total object in the form of JSONstring
+    * 
     */
     let JSONstring=JSON.stringify(totalObject,null,2);
     console.log(JSONstring);
-   /**
-    * writing the json string into new outputfile
+   /***
+    *@description : writing the json string into new outputfile
     */
     fs.writeFile("outputInventoryExtended.json", JSONstring, 'utf8', function (err) {
         if (err) {

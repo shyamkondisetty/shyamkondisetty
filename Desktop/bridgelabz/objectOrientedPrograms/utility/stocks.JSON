@@ -1,0 +1,40 @@
+{
+    "stocks":[
+        {
+        "stocksymbol":"hdfc",
+        "stockname":"HDFC BANK",
+        "stockprice":100
+        },
+
+        {
+        "stocksymbol":"icic",
+        "stockname":"ICIC BANk",
+        "stockprice":50
+        },
+        {
+        "stocksymbol":"goldmansachs",
+        "stockname":"GOLDMANSACHS BANK",
+        "stockprice":200
+        },
+        {
+        "stocksymbol":"axis",
+        "stockname":"AXIS BANK",
+        "stockprice":150
+        },
+        {
+        "stocksymbol":"sbi",
+        "stockname":"SBI BANK",
+        "stockprice":50
+        },
+        {
+        "stocksymbol":"idbi",
+        "stockname":"IDBI BANK",
+        "stockprice":150
+        },
+        {
+        "stocksymbol":"andra",
+        "stockname":"ANDRA BANK",
+        "stockprice":100
+        }
+    ]
+}

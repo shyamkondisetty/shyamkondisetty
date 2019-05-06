@@ -9,9 +9,21 @@
 
 
 try{
-    let deckofcardsutil=require('../objectOrientedPrograms/utility/deckOfCardsutil');
+    /***
+     * @description : it creates an object of deckof cards class 
+     */
+    let deckofcards=require('../objectOrientedPrograms/utility/deckOfCardsutil');
+    let deckofcardsutil=new deckofcards();
+    /***
+     * @description: we call the method totalCards2D to distribute the cards 
+     */
     let totalCards=deckofcardsutil.totalCards2D();
     let finalCards=deckofcardsutil.distributeCards(totalCards);
+    /***
+     * @param  {*} finalCards
+     * @description : this method is used to display the cards that are distributed
+     * @returns : 2D array of distributed cards
+     */
     deckofcardsutil.displayDistributedCards(finalCards);
 }
 catch(err){

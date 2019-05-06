@@ -1,10 +1,11 @@
 
-module.exports={
-/*
-* function inventory () is used to get the json data from objects and returning as string
-*/
-inventory(choice) {
-    var result = this.takechoice(choice);
+module.exports=function inventorymanagement(){
+/***
+ * @param {*} choice
+ * @description : function inventory () is used to get the json data from objects and returning as string
+ */
+this.inventory=function(choice) {
+    var result = takechoice(choice);
     if (result != "invalid data" &&result != undefined) {
         var stringdata = "[";
         for (let i = 0; i < result.length; i++) {
@@ -16,9 +17,9 @@ inventory(choice) {
         }
 
         stringdata = stringdata + "]";
-            /*
-            * calculate total and returning as a particular object
-            */
+    /**
+     * @description : calculate total and returning as a particular object
+     */
         if (choice == 1) {
             return "Rice: " + stringdata;
         }
@@ -38,17 +39,19 @@ inventory(choice) {
          */
         return "please enter numeric value";
     }
-},
+}
 
-/*
-* function takechoice() is used to ctake choice from the user
-*/
-takechoice(choice) {
+/***
+ * @param {*} choice
+ * @description : function takechoice() is used to ctake choice from the user
+ * @returns : returns the stocksarray of particular stock
+ */
+let takechoice=function(choice) {
     const fs = require('fs');//filesystem module to get files
     var data = fs.readFileSync('../objectOrientedPrograms/JSON/inventorymanagement.JSON');
-/*
-* function JSON.parse() is used to convert the string into a JavaScript Objects
-*/
+/***
+ * @description : function JSON.parse() is used to convert the string into a JavaScript Objects
+ */
     var jsonData = JSON.parse(data);
     //validation
     if (!isNaN(choice)) {

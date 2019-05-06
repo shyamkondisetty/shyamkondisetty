@@ -1,7 +1,11 @@
-let numberValid=/[0-9]/;
-let nameValid=/[a-z]/;
 
-module.exports={
+
+module.exports=function regX(){
+    /***
+     * @description : these are the regular expressions used for validations
+     */
+    let numberValid=/[0-9]/;
+    let nameValid=/[a-z]/;
    /**
     * 
     * @param {name } 
@@ -9,7 +13,7 @@ module.exports={
     * @param {mobilenumber}  
     * @description : it checks the validation of the the inputs
     */
-    checkValidations(name,fullname,mobilenumber){
+    this.checkValidations=function (name,fullname,mobilenumber){
         if(this.nameValidation(name)){
             if(this.fullnameValidation(fullname)){
                 if(this.mobileNumberValidation(mobilenumber)){
@@ -30,49 +34,49 @@ module.exports={
             return false;
         }
         
-    },
+    }
     /**
      * 
      * @param {*} name
      * @description : it checks the validation by using regular expressions for name 
      */
-    nameValidation(name){
+    this.nameValidation=function(name){
         
         if(nameValid.test(name.lower)&&name.length>=3)
             return true;
         else
             return false;
 
-    },
+    }
     /**
      * 
      * @param {*} fullname
      * @description : it checks the validation by using regular expressions for fullname 
      */
-    fullnameValidation(fullname){
+    this.fullnameValidation=function(fullname){
         if(nameValid.test(fullname.lower)&&fullname.length>=6)
             return true
         else
             return false
 
-    },
+    }
     /**
      * 
      * @param {*} mobilenumber 
      * @description : : it checks the validation by using regular expressions for mobile number
      * 
      */
-    mobileNumberValidation(mobilenumber){
+    this.mobileNumberValidation=function (mobilenumber){
         if(numberValid.test(mobilenumber)&&mobilenumber.length==10)
             return true;
         else
             return false;
-    },
+    }
 
     /**
      * @description : it give the current date
      */
-    getDate(){
+     this.getDate=function(){
         var date=new Date();
         return date.getDate()+"/" +date.getMonth()+"/"+date.getFullYear();
     }

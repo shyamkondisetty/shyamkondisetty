@@ -9,12 +9,32 @@
  ******************************************************************************/
 
 try{
-    let regularexpressionsutil=require('../objectOrientedPrograms/utility/regularExpressionsutil');
+    /***
+     * @description : this is used to create an object of regular expressions
+     *                of util class to use the methods in it 
+     */
+    let regularexpressionsUtil=require('../objectOrientedPrograms/utility/regularExpressionsutil');
+    let regularexpressionsutil=new regularexpressionsUtil();
     var readline=require("readline-sync");//readline module for inputs
+
+    /***
+     * @description : this is the paragraph in the form of string taken to 
+     *                replace with proper inputs
+     */
     var input="Hello <<name>>, We have your fullname as <<full name>> in our system. your contact number is +91­-<<mobilenumber>>.Please,let us know in case of any clarification Thank you BridgeLabz <<date>>."
-    var name=readline.question("enter name must be 3 characters");
-    var fullname=readline.question("enter the fullname must be 6 letters");
-    var mobilenumber=readline.question("enter the mobile number must be 10 numbers");
+    /**
+     * @description : input give to name
+     */
+    var name=readline.question("enter name must be 3 characters\n");
+    /***
+     * @description : fullname of person to check the validation for graterthan six letters
+     */
+    var fullname=readline.question("enter the fullname must be 6 letters\n");
+    /***
+     * @description : mobilenumber of person to check the validation for numbervaliadtion
+     *                and to replace the mobile number
+     */
+    var mobilenumber=readline.question("enter the mobile number must be 10 numbers\n");
     //var date=readline.question("enetr the date in format DD/MM/YYYY");
     /***
      * @param {name,fullname,mobilnumber}
@@ -31,9 +51,9 @@ try{
          */
         let date=regularexpressionsutil.getDate();
         input=input.replace("<<date>>",date);
-        /***
-         *  this line prints the modified string
-         */
+       /***
+        * @description : this line prints the modified string
+        */
         console.log(input);
     }
 }
