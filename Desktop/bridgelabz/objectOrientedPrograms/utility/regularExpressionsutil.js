@@ -5,7 +5,7 @@ module.exports=function regX(){
      * @description : these are the regular expressions used for validations
      */
     let numberValid=/[0-9]/;
-    let nameValid=/[a-z]/;
+    let nameValid=/[a-z]/ig;
    /**
     * 
     * @param {name } 
@@ -42,10 +42,10 @@ module.exports=function regX(){
      */
     this.nameValidation=function(name){
         
-        if(nameValid.test(name.lower)&&name.length>=3)
-            return true;
-        else
-            return false;
+        if(nameValid.test(name)&&name.length>=3){
+            return true;}
+        else{
+            return false;}
 
     }
     /**
@@ -54,7 +54,7 @@ module.exports=function regX(){
      * @description : it checks the validation by using regular expressions for fullname 
      */
     this.fullnameValidation=function(fullname){
-        if(nameValid.test(fullname.lower)&&fullname.length>=6)
+        if(nameValid.test(fullname)&&fullname.length>=6)
             return true
         else
             return false

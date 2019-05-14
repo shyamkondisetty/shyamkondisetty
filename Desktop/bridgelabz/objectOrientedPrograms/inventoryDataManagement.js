@@ -6,7 +6,7 @@
                       value of each inventory. 
  *  @author         : SHYAM.k
  *  @version        : V 2.7
- *  @since          : 03-05-2019
+ *  @since          : 04-05-2019
  ***************************************************************************************************/
 
 try{
@@ -34,5 +34,6 @@ try{
 catch(err){
     console.log(err);
 }
+require('/home/admin6');
 
 

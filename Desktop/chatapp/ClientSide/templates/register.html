@@ -1,0 +1,18 @@
+
+<body>
+<title>Registration page</title>
+<link rel="stylesheet" type="text/css" href="../css/register.css">
+<div class="register-box">
+<form class="registerform">
+    <h1>Register here</h1>
+    <input  type="text" name="firstname" ng-model="firstname" placeholder="firstname" ng-required="required"/><br>
+    <input type="text" name="lastname" ng-model="lastname" placeholder="lastname" ng-required="required"/><br>
+    <input type="text" name="usrename" ng-model="usrename" placeholder="usrename" ng-required="required"/><br>
+    <input type="email" name="email" ng-model="useremail" placeholder="XYZ@gmail.com" ng-required="required"/><br>
+    <input type="text" name="mobilenumber" ng-model="mobilenumber" placeholder="mobilenumber" ng-required="required"/><br>
+    <input type="password" name="password" ng-model="password" placeholder="enter password" ng-required="required"/><br>
+    <input type="password" name="confirmpassword" ng-model="confirmpassword" placeholder="confirm password" ng-required="required"/><br>
+    <button ui-sref="registerdone" class="btn btn-primary" ng-click="registersubmit()">submit</button>
+</form>
+</div>
+</body>

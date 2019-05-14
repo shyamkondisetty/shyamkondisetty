@@ -1,0 +1,38 @@
+{
+  "Rice": [
+      {
+          "name": "Brown Rice",
+          "weight": 10,
+          "price": 100
+      },
+      {
+          "name": "White Rice",
+          "weight": 20,
+          "price": 60
+      }
+  ],
+  "Pulses": [
+      {
+          "name": "Dry Beans",
+          "weight": 5,
+          "price": 60
+      },
+      {
+          "name": "Pegion Peas",
+          "weight": 3,
+          "price": 70
+      }
+  ],
+  "Wheats": [
+      {
+          "name": "Bread Wheat",
+          "weight": 15,
+          "price": 20
+      },
+      {
+          "name": "Common Wheat",
+          "weight": 10,
+          "price": 25
+      }
+  ]
+}

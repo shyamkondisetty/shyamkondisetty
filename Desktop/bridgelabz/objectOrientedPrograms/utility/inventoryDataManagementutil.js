@@ -1,5 +1,8 @@
 
 module.exports=function inventorymanagement(){
+
+    const fs = require('fs');//filesystem module to get files
+    var data = fs.readFileSync('/home/admin6/Desktop/bridgelabz/objectOrientedPrograms/JSON/inventorymanagement.JSON');
 /***
  * @param {*} choice
  * @description : function inventory () is used to get the json data from objects and returning as string
@@ -47,8 +50,7 @@ this.inventory=function(choice) {
  * @returns : returns the stocksarray of particular stock
  */
 let takechoice=function(choice) {
-    const fs = require('fs');//filesystem module to get files
-    var data = fs.readFileSync('../objectOrientedPrograms/JSON/inventorymanagement.JSON');
+    
 /***
  * @description : function JSON.parse() is used to convert the string into a JavaScript Objects
  */

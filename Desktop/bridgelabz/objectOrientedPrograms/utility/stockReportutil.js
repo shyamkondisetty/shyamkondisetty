@@ -15,7 +15,8 @@ module.exports=
         /***
          * @description : gettting the data from the json file
          */
-        let stockJson=fs.readFileSync('../objectOrientedPrograms/JSON/stockReport.JSON');
+        require('');
+        let stockJson=fs.readFileSync('/home/admin6/Desktop/bridgelabz/objectOrientedPrograms/JSONstockReport.JSON');
         let stockReport=JSON.parse(stockJson);
 
     /***

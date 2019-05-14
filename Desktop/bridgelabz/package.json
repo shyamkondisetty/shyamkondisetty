@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-1.6-cli": "~1.6.3",
     "chai": "^4.2.0",
     "js-generics": "0.0.6",
     "mocha": "^6.1.4",

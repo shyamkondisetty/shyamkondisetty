@@ -1,7 +1,8 @@
 /***
  * @description: it gets the methods from regularExpressionsutil.js
  */
-const regularExpressionsutil=require('../../objectOrientedPrograms/utility/regularExpressionsutil')
+const regularExpressionsUtil=require('../../objectOrientedPrograms/utility/regularExpressionsutil')
+const regularExpressionsutil=new regularExpressionsUtil()
 var assert=require('assert');
 /***
  * @description: it gets the functions from regularExpressions.js file
@@ -25,11 +26,11 @@ describe("To check regular expressions  functions",()=>{
  */
 
     it("raises to check the fullnameValidation", (callback) => {   
-        let result=regularExpressionsutil.nameValidation("shyamkondisetty")
+        let result=regularExpressionsutil.fullnameValidation("Shyamkondisetty")
         assert.equal(result,true);
-        result=regularExpressionsutil.nameValidation("shyam")
+        result=regularExpressionsutil.fullnameValidation("shyam")
         assert.equal(result,false);
-        result=regularExpressionsutil.nameValidation("shyam$$$")
+        result=regularExpressionsutil.fullnameValidation("66666")
         assert.equal(result,false);
         callback();
 
@@ -40,7 +41,7 @@ describe("To check regular expressions  functions",()=>{
  */
 
     it("raises to check the mobilenumberValidation", (callback) => {   
-        let result=regularExpressionsutil.mobileNumberValidation(7382008456);
+        let result=regularExpressionsutil.mobileNumberValidation("7382008456");
         assert.equal(result,true);
         result=regularExpressionsutil.mobileNumberValidation("abcdefgjgjhkl")
         assert.equal(result,false);
@@ -55,7 +56,7 @@ describe("To check regular expressions  functions",()=>{
 
     it("raises to check the getDate", (callback) => { 
         let date=new Date();
-        date=date.getDate()+"/"+date.getDate()+"/"+date.getFullYear(); 
+        date=date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear(); 
         let result=regularExpressionsutil.getDate();
         assert.equal(result,date);
         callback();

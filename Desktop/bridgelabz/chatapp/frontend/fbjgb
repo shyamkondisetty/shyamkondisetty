@@ -1,0 +1,99 @@
+this.newAccount=false;
+    this.forgetPassword=false
+    this.register=false
+    this.getVerify=false
+    this.verify=false
+    this.loginButtonClicked=function(){
+        this.login=true;
+        this.newAccount=false;
+        this.forgetPassword=false
+        this.register=false
+        this.getVerify=false
+        this.verify=false
+    }
+    this.newAccountButtonClicked=function(){
+        this.login=false;
+        this.newAccount=true;
+        this.forgetPassword=false
+        this.register=false
+        this.getVerify=false
+        this.verify=false
+    }
+    this.forgetPasswordButtonClicked=function(){
+        this.login=false;
+        this.newAccount=false;
+        this.forgetPassword=true
+        this.register=false
+        this.getVerify=false
+        this.verify=false
+    }
+    this.registerButtonClicked=function(){
+        this.login=false;
+        this.newAccount=false;
+        this.forgetPassword=false
+        this.register=true
+        this.getVerify=false
+        this.verify=false
+        
+    }
+    this.getVerificationButtonClicked=function(){
+        this.login=false;
+        this.newAccount=false;
+        this.forgetPassword=false
+        this.register=false
+        this.getVerify=true
+        this.verify=false
+    }
+    this.verifyButtonClicked=function(){
+        this.login=false;
+        this.newAccount=false;
+        this.forgetPassword=false
+        this.register=false
+        this.getVerify=false
+        this.verify=true
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <html ng-app="chatApp">
+<head>
+    <title>Chat App</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div >
+<h1>chatApp</h1>
+    <div ng.controller="chatAppCtrl as ctrl">
+        <p>{{ctrl.login}}</p>
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" value=""></input><br>
+        <input type="text" placeholder="password" value=""></input><br>
+        <button ng-click="ctrl.loginButtonClicked()">Sign-in</button>
+        <button ng-click="ctrl.newAccountButtonClicked()">Create a new account</button>
+        <button ng-click="ctrl.forgetPasswordButtonClicked()">forget password</button>
+       
+
+    </div>
+    
+
+    
+</div>
+
+</body>
+</html>

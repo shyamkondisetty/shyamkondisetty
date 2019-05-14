@@ -1,0 +1,9 @@
+<div ng-controller="registerCtrl">
+        <form action="/signup" id="register">
+            firstname :<input type="text" name="firstname" id="firstname" ng-model="firstname"></input><br>
+            lastname :<input type="text" name="lastname" id="lastname" ng-model='lastname'></input><br>
+            email :<input type="email" name="usermail" id="usermail" ng-model="usermail"></input><br>
+            mobile number :<input type="number" name="userMobileNumber" id="userMobileNumber" ng-model="userMobileNumber"></input><br>
+            <button type="button" ng-click="submitRegister()">Register</button>
+        </form>
+    </div>
