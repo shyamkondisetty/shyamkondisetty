@@ -16,10 +16,10 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Welcome to chat application"});
 });
-require('./app/routes/login.routes')(app);
 require('./app/routes/register.routes')(app);
+
 const server = app.listen(3000, () => {
 console.log('server is running on port', server.address().port);
 });
