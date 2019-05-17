@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
-    <link rel="stylesheet" href="../css/login.css" type="text/css" >
+
 </head>
 <body>
-    
-    <div class="login-box">
+    <link rel="stylesheet" href="../css/login.css" type="text/css" >
+    <div class="login-box" ng-controller="loginCtrl">
     <form name="loginform">
         <h1>Login</h1>
-        <input  type="email" ng-model="username" placeholder="email"  ng-required="required"><br>
-        <input type="password" ng-model="password" placeholder="password" ng-required="required"><br>
+        <input  type="email" ng-model="useremail" placeholder="email"  ng-required="true"><br>
+        <input type="password" ng-model="password" placeholder="password" ng-required="true"><br>
         <button ui-sref="login" class="btn btn-primary" style='margin-right:20px' ng-click="loginsubmit()">login</button>
         <button ui-sref="register" class="btn btn-danger" style='margin-right:20px' ng-click="registerclicked()">singn-up</button>
-        <button ui-sref="forget" class="btn btn-danger" ng-click="forgetpasswordclicked()">forget?</button>
+        <button ui-sref="forget" class="btn btn-danger" ng-click="forgetclicked()">forget?</button>
 
     </form>
 </div>

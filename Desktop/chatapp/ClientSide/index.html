@@ -1,21 +1,23 @@
-<html>
-    <head>
-        <script src="https://code.angularjs.org/1.5.9/angular-route.js"></script>
-        <script src="https://code.angularjs.org/1.5.9/angular.min.js"></script>
-        <script src="/ClientSide/controllers/loginController.js"></script>
-        <script src="/ClientSide/controllers/registerContoller.js"></script>
-        <script src="/ClientSide/controllers/forgetController.js"></script>
-        <script src="/ClientSide/controllers/verifyController.js"></script>
-        <script src="/ClientSide/controllers/changePasswordController.js"></script>
-        <script src="/ClientSide/css/login.css"></script>
-        <script src="/ClientSide/css/register.css"></script>
-        <script src="/ClientSide/css/forgetpassword.css"></script>
-        <script src="/ClientSide/css/verify.css"></script>
-        <script src="/ClientSide/css/changepassword.css"></script>
-        <script src="/ClientSide/app.js"></script>
-    </head>
-    <body ng-app="chatApp">
-        <p></p>
-        <div ui-view>   </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chatapp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="./contrllers/login.controller.js"></script>
+    <script src="./contrllers/register.controller.js"></script>
+    <script src="./contrllers/forget.controller.js"></script>
+    <script src="./contrllers/reset.controller.js"></script>
+    <script src="./services/login.services.js"></script>
+    <script src="./services/register.services.js"></script>
+    <script src="./services/forget.services.js"></script>
+    <script src="./services/reset.services.js"> </script>
+</head>
+<body ng-app="myApp">
+    <div ng-view></div>
+</body>
 </html>

@@ -1,30 +1,27 @@
-var app=angular.module(chatApp,['ui.router'])
-app.config(function($routeProvider,$urlRouterProvider){
-    $urlRouterProvider.otherwise('/login');
-    $routeProvider
-    .state('login', {
-        url: '/login',
-        templateUrl: 'dashboard.html',
-        controller :'loginctrl'
-    })
-    .state('register', {
-        url: '/register',
-        templateUrl: 'register.html',
-        controller :'registerctrl'
-    })
-    .state('forget', {
-        url: '/forgetpassword',
-        templateUrl: 'forgetpassword.html',
-        controller :'forgetctrl'
-    })
-    .state('forget.verify', {
-        url: '/verify',
-        templateUrl: 'verify.html',
-        controller :'verifyctrl'
-    })
-    .state('forget.change', {
-        url: '/change',
-        templateUrl: 'changepassword.html',
-        controller :'changectrl'
-    })
-})
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+  $routeProvider
+  .when("/", {
+    templateUrl : "./templates/login.html",
+    controller : "loginCtrl"
+  })
+  .when("/login", {
+    templateUrl : "./templates/login.html",
+    controller : "loginCtrl"
+  })
+  .when("/register", {
+    templateUrl : "./templates/register.html",
+    controller : "registerCtrl"
+  })
+  .when("/forgetpassword", {
+    templateUrl : "./templates/forgetpassword.html",
+    controller : "forgetCtrl" 
+  })
+  .when("/reset", {
+    templateUrl : "./templates/reset.html",
+    controller : "resetCtrl" 
+  })
+  .otherwise("/",{
+    redirectTo: "/"
+  })
+});

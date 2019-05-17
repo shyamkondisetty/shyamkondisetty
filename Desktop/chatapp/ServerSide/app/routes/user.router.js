@@ -1,4 +1,8 @@
-module.exports = (app) => {
-    const userController=require('../../controllers/user.controller');
-    app.post("/register",userController.registerCtrl);
-}
+const express=require('express')
+const router=express.Router();
+const userController=require('../../controllers/user.controller');
+router.post("/register",userController.registerCtrl)
+router.get("/login",userController.loginCtrl);
+router.put("/resetpassword",userController.resetCtrl);
+router.get("/forget",userController.forgetCtrl)
+module.exports=router;
