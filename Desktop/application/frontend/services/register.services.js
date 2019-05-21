@@ -5,15 +5,14 @@ app.service('registerService',function($location,$http){
             method: 'POST',
             data: registerdata
         }).then(function(response){
-            console.log('myresponse :   ',response)
-            //console.log(response)
-
+            console.log("registration successful");
+            console.log(response)
+            $location.path("/login");
         })
         .catch(function(err){
-        
-            console.log("error occured"); 
-            //$location.path("/login")
-
+            console.log(err); 
+            console.log("registration unsuccessful");
+            $location.path("/login");
         })
 
 

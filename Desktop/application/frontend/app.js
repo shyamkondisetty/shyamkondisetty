@@ -21,6 +21,10 @@ app.config(function($routeProvider) {
     templateUrl : "./templates/reset.html",
     controller : "resetCtrl" 
   })
+  .when("/dashboard", {
+    templateUrl : "./templates/dashboard.html",
+    controller : "dashboardCtrl"
+  })
   .otherwise("/",{
     redirectTo: "/"
   })

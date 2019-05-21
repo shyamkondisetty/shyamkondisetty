@@ -2,12 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const router=require('../ServerSide/app/routes/user.router')
-
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-
 const dbConfig = require('./config/database.config');
 const mongoose = require('mongoose');
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 app.use('/',router)
 app.use(express.static('../frontend'))
 mongoose.Promise = global.Promise;
@@ -27,9 +25,6 @@ app.get('/', (req, res) => {
 var port =3000
 console.log("port")
 app.listen(port, () => {
-
 console.log('server is running on ',port)
 });
-
-
 module.exports=app;
