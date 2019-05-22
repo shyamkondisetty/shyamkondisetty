@@ -22,9 +22,30 @@ app.get('/', (req, res) => {
 });
 
 
+
+
 var port =3000
 console.log("port")
-app.listen(port, () => {
+const server=app.listen(port, () => {
 console.log('server is running on ',port)
 });
+
+
+var io = require('socket.io')(server);
+var connections=[];
+//Whenever someone connects this gets executed
+io.on('connection', function(socket) {
+    socket.on('has connected',function(username){
+        console.log(username);
+        console.log('A user connected');
+        connections.push(username);
+        console.log(connections)
+        io.emit('has connected',connections)
+    })
+    //io.emit('has connected',connections)
+    //Whenever someone disconnects this piece of code executed
+    socket.on('disconnect', function () {
+       console.log('A user disconnected');
+    });
+ });
 module.exports=app;

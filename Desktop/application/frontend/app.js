@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
     templateUrl : "./templates/reset.html",
     controller : "resetCtrl" 
   })
-  .when("/dashboard", {
+  .when("/dash", {
     templateUrl : "./templates/dashboard.html",
     controller : "dashboardCtrl"
   })

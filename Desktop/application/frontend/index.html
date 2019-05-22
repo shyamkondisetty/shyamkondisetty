@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chatapp</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js "></script>
     <script src="app.js"></script>
     <script src="./contrllers/login.controller.js"></script>
     <script src="./contrllers/register.controller.js"></script>
@@ -18,8 +19,13 @@
     <script src="./services/forget.services.js"></script>
     <script src="./services/reset.services.js"> </script>
     <script src="./services/dashboard.services.js"></script>
+    <script>
+        var socket = io();
+       // socket.emit('has connected',"hi")
+    </script>
 </head>
 <body ng-app="myApp">
+        
     <div ng-view></div>
 </body>
 </html>

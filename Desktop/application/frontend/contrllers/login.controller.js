@@ -4,7 +4,7 @@ app.controller('loginCtrl',function($scope,loginService){
                   "useremail": $scope.useremail,
                   "password": $scope.password
               }
-
+              
         console.log(loginPageData);
         loginService.loginClick(loginPageData);
       }
