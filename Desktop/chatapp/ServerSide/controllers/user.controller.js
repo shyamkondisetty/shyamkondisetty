@@ -84,3 +84,20 @@ exports.forgetCtrl=(req,res)=>{
         }
     })
 }
+
+exports.verifyCtrl=(req,res)=>{
+    let responseResult={}
+    userservice.verifyService(req.body,(err,result)=>{
+        if(err){
+            responseResult.err=err;
+            responseResult.status=false;
+            res.status(500).send(responseResult)
+        }
+        else{
+            responseResult.data=result;
+            responseResult.status=true;
+            res.status(200).send(responseResult);
+        }
+    })
+
+}

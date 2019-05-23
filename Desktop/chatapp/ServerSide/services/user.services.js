@@ -48,3 +48,16 @@ exports.forgetService=(data,callback)=>{
         }
     })
 }
+
+
+exports.verifyService=(data,callback)=>{
+    userModel.verify(data,(err,result)=>{
+        if(err){
+            console.log(err);
+            callback(err);
+        }
+        else{
+            return callback(null,result);
+        }
+    })
+}

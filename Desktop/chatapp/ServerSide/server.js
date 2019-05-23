@@ -2,12 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const router=require('../ServerSide/app/routes/user.router')
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-
 const dbConfig = require('./config/database.config');
 const mongoose = require('mongoose');
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 app.use('/',router)
+app.use(express.static('../frontend'))
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
@@ -17,15 +17,35 @@ mongoose.connect(dbConfig.url, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-
 app.get('/', (req, res) => {
     res.json({"message": "Welcome to chat application"});
 });
 
-const server = app.listen(3000, () => {
-console.log('server is running on port', server.address().port);
+
+
+
+var port =3000
+console.log("port")
+const server=app.listen(port, () => {
+console.log('server is running on ',port)
 });
-//app.use(express.static(__dirname));
 
 
+var io = require('socket.io')(server);
+var connections=[];
+//Whenever someone connects this gets executed
+io.on('connection', function(socket) {
+    socket.on('has connected',function(username){
+        console.log(username);
+        console.log('A user connected');
+        connections.push(username);
+        console.log(connections)
+        io.emit('has connected',connections)
+    })
+    //io.emit('has connected',connections)
+    //Whenever someone disconnects this piece of code executed
+    socket.on('disconnect', function () {
+       console.log('A user disconnected');
+    });
+ });
 module.exports=app;
