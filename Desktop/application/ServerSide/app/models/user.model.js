@@ -60,8 +60,6 @@ class user_model {
                 }
             }
         })
-
-
     }
 
     reset(data, callback) {

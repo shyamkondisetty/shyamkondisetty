@@ -8,4 +8,5 @@ router.put("/resetpassword",userController.resetCtrl);
 router.get("/forget",userController.forgetCtrl)
 router.post("/verifyemail",userController.verifyCtrl)
 router.post("/dashboard",chatController.saveMessageCtrl)
+router.post("/getMsg",chatController.chatCtrl)
 module.exports=router;
