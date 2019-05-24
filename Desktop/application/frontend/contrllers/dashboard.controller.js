@@ -3,15 +3,15 @@ app.controller('dashboardCtrl', function ($scope, $rootScope, dashboardService) 
   console.log("imn controller");
   socket.on('has connected', function (onlineUsers) {
     console.log(onlineUsers)
-    /*for (let i = 0; i < onlineUsers.length; i++) {
+    $rootScope.records =[]
+    for (let i = 0; i < onlineUsers.length; i++) {
       if (onlineUsers[i] !== $rootScope.sender) {
         $rootScope.records.push(onlineUsers[i])
       }
-    }*/
-    $rootScope.records = onlineUsers;
+    }
+   // $rootScope.records = onlineUsers;
   })
   $rootScope.receiver = ""
-
   $scope.recieverclicked = function (receiver) {
     console.log("hi", receiver);
     $rootScope.receiver = receiver;

@@ -16,7 +16,7 @@
                     <h3>TO:<a href=""> {{receiver}} </a></h3>   
                 </div>
                 <div id="messages">
-                    <a ng-repeat="x in usermessages">{{x.message}}</a>
+                    <a ng-repeat="x in usermessages" ng-hide="">{{x.message}}</a>
                 </div>
                 <div id="send">
                     <input type="text" name="sendmessage" ng-model="sendmessage" placeholder="enter a message" ng-required="true"/>
