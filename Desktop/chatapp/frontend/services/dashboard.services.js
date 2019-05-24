@@ -1,5 +1,6 @@
 app.service('dashboardService',function($location,$rootScope,$http){
-    console.log("imn services");
+    console.log("imn services"); 
+    $rootScope.usermessages=[];
     this.receiverClick=function(getmessagedata){
         // $location.path('/dashboard')
         console.log(getmessagedata);
@@ -9,8 +10,8 @@ app.service('dashboardService',function($location,$rootScope,$http){
             data: getmessagedata
         }).then(function(response){
             console.log('myresponse : ',response);
-            console.log('msg',response.data.data[0]);
-
+            console.log('msg',response.data.data);
+            $rootScope.usermessages=response.data.data;
         })
         .catch(function(err){
             console.log("error occured"); 
