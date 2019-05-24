@@ -15,8 +15,5 @@ app.service('registerService',function($location,$http){
             $location.path("/login");
         })
 
-
-          
-
     }
 })

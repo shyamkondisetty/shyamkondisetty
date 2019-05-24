@@ -3,20 +3,20 @@
     <title>Dashboard page</title>
 <div id="dashboard">
     <div id="top">
-        <h1>{{sender}}</h1>
+        <h3>{{sender}}</h3>
         <button ui-sref="login" class="btn btn-primary" style='margin-right:20px' ng-click="signoutClicked()">signout</button>
     </div>
     <div id="down"> 
             <div id="online-users"> 
                     <h1>Online Users </h1>
-                    <a href="" ng-repeat="x in records" ng-click="recieverclicked(x)">{{x}}</a>
+                    <a href="" ng-repeat="x in records" ng-click="recieverclicked(x)" >{{x}}</a>
             </div>
             <div id="chat-area">
                 <div id="chats">
-                    <h2>TO:<a href=""> {{receiver}} </a></h2>   
+                    <h3>TO:<a href=""> {{receiver}} </a></h3>   
                 </div>
                 <div id="messages">
-
+                    <a ng-repeat="x in usermessages">{{x.message}}</a>
                 </div>
                 <div id="send">
                     <input type="text" name="sendmessage" ng-model="sendmessage" placeholder="enter a message" ng-required="true"/>
