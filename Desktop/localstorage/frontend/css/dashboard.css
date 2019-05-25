@@ -1,0 +1,115 @@
+#dashboard{
+    overflow: hidden;
+}
+#dashboard #top{
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(119, 189, 119, 0.856);
+    height: 10%;
+}
+#dashboard #top button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    border: 0;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    width: 8%
+} 
+#dashboard #down{
+    display: flex;
+    height:90%
+}
+
+#dashboard #down #online-users{
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    width: 25%;
+    height:100%
+}
+#dashboard #down #online-users a{
+  text-decoration: none;
+  display: inline;
+  
+}
+#dashboard #down #chat-area{
+    background-color:rgb(238, 228, 228);
+    width:75%;
+    height:100%;
+    overflow: hidden
+    
+}
+
+
+#dashboard #down #chat-area #send{
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5%;
+   
+} 
+
+#dashboard #down #chat-area #messages{
+    display: flex;
+    background-color: #FFFFFF;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 450px;
+    flex-direction: column;
+    overflow-y: auto;  
+} 
+#dashboard #down #chat-area #messages #dividing p{
+    border-radius: 9px;
+    width: 45%;
+    padding: 6px;
+    height: auto;
+    margin-bottom: 1px;
+    background-color: rgba(119, 189, 119, 0.856);
+    font-size: 20px;
+  
+} 
+#dashboard #down #chat-area #messages #dividing .sender{
+    
+    border-radius: 9px;
+    width: 48%;
+    padding: 6px;
+    height: auto;
+    margin-bottom: 1px;
+    margin-left: 418px;
+    background-color: #DCF8C6;
+    font-size: 20px;
+  
+} 
+#dashboard #down #chat-area #send button{
+    margin-bottom: 15px;
+    margin-left: 25px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    border: 0;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    width: 8%
+}
+#dashboard #down #chat-area #send input{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: white;
+    width: 50%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+
