@@ -13,11 +13,16 @@
             </div>
             <div id="chat-area">
                 <div id="chats">
-                    <h3>TO:<a href=""> {{receiver}} </a></h3>   
+                    <h3>TO:<a href=""> {{reciever}} </a></h3>   
                 </div>
                 <div id="messages">
-                    <a ng-repeat="x in usermessages" ng-hide="">{{x.message}}</a>
+                    <div id ="dividing" ng-repeat="x in usermessages">
+                        <p ng-if="x.sender!=sender" >{{x.message}}</p>
+                        <p class="sender" ng-if="x.sender==sender" >{{x.message}}</p>
+                    </div>
+                    
                 </div>
+                    
                 <div id="send">
                     <input type="text" name="sendmessage" ng-model="sendmessage" placeholder="enter a message" ng-required="true"/>
                     <button ui-sref="send" class="btn btn-primary" style='margin-right:20px' ng-click="sendClicked()">send</button>

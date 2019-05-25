@@ -42,10 +42,27 @@ io.on('connection', function(socket) {
         console.log(connections)
         io.emit('has connected',connections)
     })
+
+    socket.on('messagesent',function(messagesent){
+        console.log(messagesent);
+        console.log('messgaesent');
+        io.emit('messagesent',messagesent)
+    })
+
+    socket.on('loggedout', function (sender) {
+        console.log('A user disconnected');
+        let index=connections.indexOf(sender);
+        connections.splice(index, 1);
+        console.log(connections);
+       io.emit('loggedout',connections)
+        
+     });
     //io.emit('has connected',connections)
     //Whenever someone disconnects this piece of code executed
-    socket.on('disconnect', function () {
-       console.log('A user disconnected');
+    socket.on('disconnect', function (sender) {
+       console.log('A user disconnected');  
     });
+
+    
  });
 module.exports=app;

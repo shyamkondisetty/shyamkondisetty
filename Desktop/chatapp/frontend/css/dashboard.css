@@ -64,12 +64,25 @@
     flex-direction: column;
     overflow-y: auto;  
 } 
-#dashboard #down #chat-area #messages a{
-    border-radius: 4px;
-    width: 50%;
+#dashboard #down #chat-area #messages #dividing p{
+    border-radius: 9px;
+    width: 45%;
+    padding: 6px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     background-color: rgba(119, 189, 119, 0.856);
+    font-size: 20px;
+  
+} 
+#dashboard #down #chat-area #messages #dividing .sender{
+    
+    border-radius: 9px;
+    width: 48%;
+    padding: 6px;
+    height: auto;
+    margin-bottom: 1px;
+    margin-left: 418px;
+    background-color: #DCF8C6;
     font-size: 20px;
   
 } 
