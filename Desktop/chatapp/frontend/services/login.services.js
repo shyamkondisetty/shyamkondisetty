@@ -31,12 +31,42 @@ app.service('loginService', function ($location, $http, $rootScope) {
                 localStorage.setItem('records', JSON.stringify(recorrdsinservices));
                 //$rootScope.records=onlineUsers;
             })
+            $http({
+                url: 'http://localhost:3000/getAllUsers',
+                method: 'POST',
+            }).then(function (response) {
+                console.log('myresponse :   ', response)
+                console.log('allusers',response.data.data)
+
+                localStorage.setItem('alluserrecords', JSON.stringify(response.data.data));
+                
+            })
+                .catch(function (err) {
+                    console.log("error occured", err);
+                })  
+
+
+
+
+
             $location.path("/dash");
 
         })
             .catch(function (err) {
                 console.log("error occured", err);
             })
+
+
+
+            
+
+
+
+
+
+
+
+
     }
     this.signupClick = function () {
         $location.path('/register')

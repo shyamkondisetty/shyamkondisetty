@@ -1,5 +1,7 @@
 app.service('dashboardService',function($location,$http){
     console.log("imn services"); 
+
+   
     //$rootScope.usermessages=[];
     this.receiverClick=function(getmessagedata,$scope){
         // $location.path('/dashboard')

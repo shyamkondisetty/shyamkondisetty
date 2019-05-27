@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const mail=require('../../middleware/nodeMailer');
+const jwt=require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
 
@@ -63,6 +65,16 @@ class user_model {
     }
 
     reset(data, callback) {
+
+        user.updateOne({ useremail: data.payload.useremail }, { password:newpassword }, (err, result) => {
+            if (err) {
+                callback(err);
+            }
+            else {
+    
+                callback(null, result);
+            }
+        });
         user.find({ useremail: data.useremail }, (err, result) => {
             if (err) {
                 console.log(err);
@@ -92,52 +104,35 @@ class user_model {
     }
     forget(data, callback) {
         user.find({ useremail: data.useremail }, (err, result) => {
+            console.log()
             if (err) {
                 console.log(err);
                 callback(err);
             }
             else {
-                if (result == null) {
+                if (result.length==0) {
                     console.log("email is not registered");
-                    return callback("Not Exists")
+                    return callback("Not Exists");
                 }
-                else {
+                else{
+                    console.log(result[0])
 
-                    var transporter = nodemailer.createTransport({
-                        service: 'gmail',
-                        auth: {
-                            user: 'shyamkondisetty@gmail.com',
-                            pass: 'XXXXXXXXX'
-                        }
-                    });
+                    var token = jwt.sign({ useremail: data.useremail }, "secretkey")
+                    mail.sendEMailFunction(token,result[0])
+                    return callback(null, result)
 
-                    var mailOptions = {
-                        from: 'shyamkondisetty@gmail.com',
-                        to: 'shyamprasad.733@gmail.com',
-                        subject: 'Sending Email using Node.js',
-                        text: 'That was easy!',
-                        url: 'http://127.0.0.1:5500/?#!/reset'
-                    };
-
-                    transporter.sendMail(mailOptions, function (error, info) {
-                        if (error) {
-                            console.log(error);
-                        } else {
-                            console.log('Email sent: ' + info.response);
-                            callback(null, info)
-                        }
-                    });
                 }
             }
+
+            
         })
     }
 
 
-
-
-
-
     verify(data, callback) {
+
+
+        
         user.find({ useremail: data.useremail }, (err, result) => {
             if (err) {
                 console.log(err);
@@ -151,6 +146,20 @@ class user_model {
                 else {
 
                 }
+            }
+        })
+    }
+
+
+    getAllMsg(data,callback){
+        user.find({},(err,result)=>{
+            if(err){
+                console.log(err);
+                callback(err);
+            }
+            else{
+                console.log("all users get successfully......");
+                return callback(null,result)
             }
         })
     }

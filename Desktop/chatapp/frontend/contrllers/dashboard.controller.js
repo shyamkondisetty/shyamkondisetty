@@ -1,6 +1,8 @@
 
-app.controller('dashboardCtrl', function ($scope, $rootScope, dashboardService) {
+app.controller('dashboardCtrl', function ($scope, $rootScope, dashboardService,$location) {
   console.log("imn controller");
+  console.log("my current page url location",$location.url())
+  $scope.alluserrecords=JSON.parse(localStorage.getItem('alluserrecords'))
   $scope.sender = JSON.parse(localStorage.getItem('sender'));
   $scope.records = JSON.parse(localStorage.getItem('records'));
   console.log("iam in controller records", $scope.records);
@@ -20,7 +22,7 @@ app.controller('dashboardCtrl', function ($scope, $rootScope, dashboardService) 
 
 
   socket.on('loggedout', function (onlineUsers) {
-    console.log("hi iam in socket ooggedout", onlineUsers)
+    console.log("hi iam in socket loggedout", onlineUsers)
     localStorage.removeItem('records');
     let recorrdsinservices = []
     for (let i = 0; i < onlineUsers.length; i++) {
@@ -74,6 +76,10 @@ app.controller('dashboardCtrl', function ($scope, $rootScope, dashboardService) 
     }
 
   }
+
+  
+
+
   $scope.signoutClicked = function () {
     dashboardService.signoutClick($scope.sender,$scope);
   }

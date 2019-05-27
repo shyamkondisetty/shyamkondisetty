@@ -7,10 +7,18 @@
         <button ui-sref="login" class="btn btn-primary" style='margin-right:20px' ng-click="signoutClicked()">signout</button>
     </div>
     <div id="down"> 
-            <div id="online-users"> 
+            <div id="users"> 
+                <div id="online-users"> 
                     <h1>Online Users </h1>
                     <a href="" ng-repeat="x in records" ng-click="recieverclicked(x)" >{{x}}</a>
+                </div>
+
+                <div id="allusers"> 
+                        <h1>All Users </h1>
+                        <a href="" ng-repeat="x in alluserrecords" ng-click="recieverclicked(x.useremail)" >{{x.useremail}}</a>
+                    </div>
             </div>
+            
             <div id="chat-area">
                 <div id="chats">
                     <h3>TO:<a href=""> {{reciever}} </a></h3>   

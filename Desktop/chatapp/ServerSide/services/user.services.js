@@ -61,3 +61,27 @@ exports.verifyService=(data,callback)=>{
         }
     })
 }
+
+
+
+try {
+
+    exports.allUsersService= (data, callback) => {
+        userModel.getAllMsg(data, (err, result) => {
+            if (err) {
+                console.log(err);
+                callback(err);
+            }
+            else {
+                console.log("in services");
+                
+                return callback(null, result);
+
+            }
+
+        })
+
+    }
+} catch (err) {
+    console.log(err);
+}

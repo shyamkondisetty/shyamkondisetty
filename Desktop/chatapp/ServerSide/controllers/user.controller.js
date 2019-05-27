@@ -67,15 +67,10 @@ exports.resetCtrl=(req,res)=>{
 exports.forgetCtrl=(req,res)=>{
     let responseResult={}
     userservice.forgetService(req.body,(err,result)=>{
-        if(err=="Not Exists"){
-            responseResult.err="email is not registered";
-            responseResult.status=false;
-            res.status(500).send(responseResult);
-        }
-        else if(err){
+        if(err){
             responseResult.err=err;
             responseResult.status=false;
-            res.status(500).send(responseResult)
+            res.status(500).send(responseResult);
         }
         else{
             responseResult.data=result;
@@ -100,4 +95,28 @@ exports.verifyCtrl=(req,res)=>{
         }
     })
 
+}
+
+
+try {
+    exports.allUsersCtrl = (req, res) => {
+        let responseResult = {}
+        userservice.allUsersService(req.body, (err, result) => {
+            if (err) {
+                responseResult.err = err;
+                responseResult.status = false;
+                res.status(500).send(responseResult)
+            }
+            else {
+                responseResult.data = result;
+                responseResult.status = true;
+                console.log("hi how ",responseResult);
+                res.status(200).send(responseResult);
+            }
+        })
+
+
+    }
+}catch(err){
+    console.log(err);
 }

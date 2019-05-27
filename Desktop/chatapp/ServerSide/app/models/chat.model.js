@@ -62,5 +62,7 @@ class chat_model{
 
         }
 
+        
+
 }
 module.exports=new chat_model();
