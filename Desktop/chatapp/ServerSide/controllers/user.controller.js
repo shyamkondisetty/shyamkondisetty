@@ -45,6 +45,7 @@ exports.loginCtrl=(req,res)=>{
 
 exports.resetCtrl=(req,res)=>{
     let responseResult={}
+    console.log("in user controller",req.body);
     userservice.resetService(req.body,(err,result)=>{
         if(err=="Not Exists"){
             responseResult.err="email is not registered";

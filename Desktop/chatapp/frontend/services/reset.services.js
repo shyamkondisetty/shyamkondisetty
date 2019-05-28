@@ -6,7 +6,7 @@ app.service('resetService',function($location,$http){
             method: 'POST',
             data: resetdata
         }).then(function(response){
-            console.log("password successfully");
+            console.log("password successfully changed");
             console.log(response)
             $location.path("/login");
         })

@@ -1,4 +1,4 @@
-app.controller('resetCtrl',function($scope,resetService){
+app.controller('resetCtrl',function($scope,resetService,$location){
 
   if($location.url().indexOf('token') !== -1){    
     $scope.token= $location.url().split('=')[1];
@@ -9,6 +9,7 @@ app.controller('resetCtrl',function($scope,resetService){
         "token" :$scope.token,
         "password" : $scope.password
       }
+      console.log(resetPageData);
     resetService.changePasswordClick(resetPageData);
     }
   })

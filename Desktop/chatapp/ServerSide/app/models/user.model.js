@@ -66,42 +66,25 @@ class user_model {
 
     reset(data, callback) {
 
-        user.updateOne({ useremail: data.payload.useremail }, { password:newpassword }, (err, result) => {
+        user.updateOne({ useremail: data.payload.useremail }, { password:data.password }, (err, result) => {
             if (err) {
                 callback(err);
             }
+            else if(result==null){
+                callback("email not exists");
+            }
+            else if(result.length==0){
+                callback("email not exists");
+            }
             else {
-    
+                console.log("changed successfully");
                 callback(null, result);
             }
         });
-        user.find({ useremail: data.useremail }, (err, result) => {
-            if (err) {
-                console.log(err);
-                callback(err);
-            }
-            else {
-                if (result == null) {
-                    console.log("email is not registered");
-                    return callback("Not Exists")
-                }
-                else {
-                    result[0].password = data.password;
-                    const userdata = new user(data);
-                    userdata.save((err, result) => {
-                        if (err) {
-                            console.log(err);
-                            callback(err);
-                        }
-                        else {
-                            console.log("passwordChanged successfully....");
-                            return callback(null, result)
-                        }
-                    })
-                }
-            }
-        })
     }
+
+
+
     forget(data, callback) {
         user.find({ useremail: data.useremail }, (err, result) => {
             console.log()
