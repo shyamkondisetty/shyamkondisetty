@@ -1,6 +1,7 @@
 
 app.controller('dashboardCtrl', function ($scope, $rootScope, dashboardService,$location) {
   console.log("imn controller");
+  console.log();
   console.log("my current page url location",$location.url())
   $scope.alluserrecords=JSON.parse(localStorage.getItem('alluserrecords'))
   $scope.sender = JSON.parse(localStorage.getItem('sender'));
